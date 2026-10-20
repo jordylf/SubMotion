@@ -10,6 +10,26 @@ editable. Bahasa Indonesia and English are first-class languages.
 **Free and open source (MIT).** Windows 10/11 (x64), After Effects and/or Premiere Pro 2022 or newer
 (tested on 2024). macOS is not supported yet.
 
+[**Download Windows beta →**](https://github.com/jordylf/SubMotion/releases/tag/v0.1.0) · [Installation](#install) · [Premiere workflow](#premiere-pro)
+
+## Panel preview
+
+Load subtitles, choose a look, then generate editable captions in Adobe.
+
+| Import & smart captions | Choose a visual style | Customize word effects |
+| :---: | :---: | :---: |
+| [![Source tab processing Indonesian subtitles](docs/screenshots/source.png)](docs/screenshots/source.png) | [![Style tab showing nine caption presets](docs/screenshots/styles.png)](docs/screenshots/styles.png) | [![Effects tab with separate Normal and Emphasis controls](docs/screenshots/effects.png)](docs/screenshots/effects.png) |
+
+Screenshots show the actual panel running in browser preview with the included
+[Indonesian sample](docs/samples/sample-id.srt). In Adobe, the badge changes to **AE** or **PR** and
+transcription and timeline generation become available. Click an image to view it full size.
+
+1. **Import or transcribe** — load SRT/VTT, or select a clip and transcribe its audio locally.
+2. **Choose your look** — pick a preset and adjust Normal and Emphasis word styling.
+3. **Preview → Generate** — create the first five examples, then process the full subtitle sequence.
+
+For example, Indonesian spoken numbers become emphasized values:
+
 ```
 "gue kira harganya cuma lima puluh ribu ternyata lima juta"
   →  Gue kira harganya cuma │ 50 RIBU │ Ternyata... │ 5 JUTA?!

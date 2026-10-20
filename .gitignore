@@ -6,3 +6,5 @@ signing/
 *.zxp
 scripts/.verify-*
 .omc/
+.playwright-cli/
+output/
