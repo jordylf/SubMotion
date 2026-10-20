@@ -1,0 +1,23 @@
+{
+  "name": "submotion",
+  "version": "0.1.0",
+  "private": true,
+  "author": "OdyWorks",
+  "description": "One-click animated, editable captions for Premiere Pro and After Effects.",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/ui/main.ts --bundle --format=iife --target=chrome88 --outfile=dist/panel.js",
+    "watch": "npm run build -- --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "check:jsx": "node scripts/check-jsx.mjs",
+    "verify:ae": "node scripts/verify-ae.ts",
+    "build:template": "node scripts/build-template.ts",
+    "fetch:bins": "node scripts/fetch-bins.ts",
+    "package": "npm run build && node scripts/fetch-bins.ts && node scripts/package.ts"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0"
+  }
+}

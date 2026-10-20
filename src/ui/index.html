@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SubMotion by OdyWorks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="mark" aria-hidden="true"></span><div><div>submotion</div><div class="hint">by OdyWorks</div></div></div>
+    <span id="hostBadge" class="chip">—</span>
+    <div class="top-actions">
+      <button id="previewBtn" class="btn ghost" title="Generate the first 5 captions">Preview</button>
+      <button id="generateBtn" class="btn run">Generate</button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" data-tab="source" aria-selected="true">Source</button>
+    <button role="tab" data-tab="style">Style</button>
+    <button role="tab" data-tab="motion">Motion</button>
+    <button role="tab" data-tab="effects">Effects</button>
+    <button role="tab" data-tab="font">Font</button>
+    <button role="tab" data-tab="layout">Layout</button>
+  </nav>
+
+  <div id="classbar" class="classbar" role="radiogroup" aria-label="Word class" hidden>
+    <button role="radio" data-class="0" aria-checked="true">Normal <span class="count" id="countNormal"></span></button>
+    <button role="radio" data-class="1" aria-checked="false">Emphasis <span class="count" id="countEmph"></span></button>
+  </div>
+
+  <main>
+    <!-- SOURCE -->
+    <section data-panel="source">
+      <div class="drop">
+        <div class="row wrap">
+          <label class="btn" for="file">Load SRT / VTT</label>
+          <input type="file" id="file" accept=".srt,.vtt" hidden>
+          <button id="transcribeBtn" class="btn accent" hidden>Transcribe selected clip</button>
+          <button id="fromLayers" class="btn" hidden>Selected text layers</button>
+        </div>
+        <div id="sourceInfo" class="hint">No subtitles yet — load a file or transcribe a clip.</div>
+      </div>
+
+      <div class="field">
+        <label for="language">Language</label>
+        <select id="language">
+          <option value="auto">Auto detect</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+
+      <div class="field" id="premiereOutputField" hidden>
+        <label for="premiereOutput">Premiere output</label>
+        <select id="premiereOutput">
+          <option value="dynamic-link">After Effects comp (Dynamic Link)</option>
+          <option value="template">Motion Graphics template (.mogrt)</option>
+        </select>
+        <p class="hint" id="premiereOutputHint"></p>
+      </div>
+
+      <div class="toggles">
+        <label><input type="checkbox" id="smartLineBreak"> Smart line break</label>
+        <label><input type="checkbox" id="highlightKeywords"> Highlight keywords</label>
+        <label><input type="checkbox" id="animateKeywords"> Animate keywords</label>
+        <label><input type="checkbox" id="detectNumbers"> Detect numbers</label>
+        <label><input type="checkbox" id="autoResize"> Auto resize</label>
+        <label><input type="checkbox" id="safeArea"> Safe area</label>
+        <label><input type="checkbox" id="wordHighlight"> Active word color</label>
+        <label><input type="checkbox" id="removeFillers"> Remove fillers</label>
+        <label class="soon" title="Phase 2"><input type="checkbox" disabled> Censor profanity</label>
+        <label class="soon" title="Phase 2"><input type="checkbox" disabled> Auto emoji</label>
+      </div>
+
+      <h2>Captions <span id="captionCount" class="hint"></span></h2>
+      <ol id="captionList" class="captions"></ol>
+
+      <details id="whisperSetup" hidden>
+        <summary>Transcription setup</summary>
+        <div class="field"><label for="whisperPath">whisper-cli.exe</label><input id="whisperPath" type="text" placeholder="C:\tools\whisper\Release\whisper-cli.exe"></div>
+        <div class="field"><label for="modelPath">Model (.bin)</label><input id="modelPath" type="text" placeholder="C:\tools\whisper\ggml-large-v3-turbo-q5_0.bin"></div>
+        <div class="field"><label for="ffmpegPath">ffmpeg</label><input id="ffmpegPath" type="text" placeholder="ffmpeg"></div>
+        <p class="hint">Runs locally and offline. The tools ship with SubMotion; the speech model (about 550 MB) downloads once, the first time you transcribe, into %APPDATA%\SubMotion\models. Leave the fields empty to use these defaults.</p>
+      </details>
+      <details>
+        <summary>Manage output</summary>
+        <div class="row wrap">
+          <button id="deleteBtn" class="btn">Delete generated</button>
+          <button id="templateBtn" class="btn" hidden>Build Premiere template</button>
+        </div>
+        <p class="hint">Generating again replaces the previous SubMotion output. Original captions are never touched.</p>
+      </details>
+    </section>
+
+    <!-- STYLE -->
+    <section data-panel="style" hidden>
+      <p class="lead">Pick a starting look. Everything stays editable in the other tabs.</p>
+      <div id="presetGrid" class="grid presets"></div>
+    </section>
+
+    <!-- MOTION -->
+    <section data-panel="motion" hidden>
+      <div id="animGrid" class="grid"></div>
+      <div class="sliders">
+        <div class="field"><label for="clsIntensity">Intensity <output id="clsIntensityOut"></output></label>
+          <input type="range" id="clsIntensity" min="0" max="100"></div>
+        <div class="field"><label for="speed">Speed <output id="speedOut"></output></label>
+          <input type="range" id="speed" data-key="speed" min="25" max="300" step="5"></div>
+        <div class="field"><label for="velocity">Velocity <output id="velocityOut"></output></label>
+          <input type="range" id="velocity" data-key="velocity" min="0" max="100"></div>
+        <div class="field"><label for="reveal">Reveal</label>
+          <select id="reveal" data-key="reveal"><option value="word">Word by word, as spoken</option><option value="caption">Whole caption at once</option></select></div>
+      </div>
+    </section>
+
+    <!-- EFFECTS -->
+    <section data-panel="effects" hidden>
+      <div id="effectGrid" class="grid"></div>
+      <div class="grid2">
+        <div class="field"><label for="strokeWidth">Outline width</label><input id="strokeWidth" data-key="strokeWidth" type="number" min="1" max="60"></div>
+        <div class="field"><label for="strokeColor">Outline color</label><input id="strokeColor" data-key="strokeColor" type="color"></div>
+      </div>
+    </section>
+
+    <!-- FONT -->
+    <section data-panel="font" hidden>
+      <div class="grid2">
+        <div class="field"><label for="clsColor">Color</label><input id="clsColor" type="color"></div>
+        <div class="field"><label for="clsSize" id="clsSizeLabel">Size</label><input id="clsSize" type="number"></div>
+      </div>
+      <div class="search"><input id="fontSearch" type="search" placeholder="Search fonts" aria-label="Search fonts"></div>
+      <div id="fontGrid" class="grid fonts"></div>
+      <button id="moreFonts" class="btn wide" hidden>Show more</button>
+    </section>
+
+    <!-- LAYOUT -->
+    <section data-panel="layout" hidden>
+      <div class="grid2">
+        <div class="field"><label for="minWords">Min words / caption</label><input id="minWords" data-key="minWords" type="number" min="1" max="12"></div>
+        <div class="field"><label for="maxWords">Max words / caption</label><input id="maxWords" data-key="maxWords" type="number" min="1" max="12"></div>
+        <div class="field"><label for="maxLines">Max lines</label><input id="maxLines" data-key="maxLines" type="number" min="1" max="4"></div>
+        <div class="field"><label for="maxWordsPerLine">Max words / line</label><input id="maxWordsPerLine" data-key="maxWordsPerLine" type="number" min="1" max="12"></div>
+        <div class="field"><label for="lineSpacing">Line spacing</label><input id="lineSpacing" data-key="lineSpacing" type="number" min="0.5" max="2" step="0.05"></div>
+        <div class="field"><label for="wordSpacing">Word spacing (em)</label><input id="wordSpacing" data-key="wordSpacing" type="number" min="0" max="1" step="0.02"></div>
+        <div class="field"><label for="maxWidthPct">Max width %</label><input id="maxWidthPct" data-key="maxWidthPct" type="number" min="20" max="100"></div>
+        <div class="field"><label for="position">Position</label>
+          <select id="position" data-key="position"><option value="upper">Upper third</option><option value="middle">Middle</option><option value="lower">Lower third</option></select></div>
+        <div class="field"><label for="caseMode">Case</label>
+          <select id="caseMode" data-key="caseMode"><option value="as-is">As spoken</option><option value="sentence">Sentence</option><option value="lower">lowercase</option><option value="upper">UPPERCASE</option></select></div>
+        <div class="field"><label for="emphasisScope">Emphasis covers</label>
+          <select id="emphasisScope" data-key="emphasisScope"><option value="word">Keyword only</option><option value="phrase">Whole phrase</option></select></div>
+        <div class="field"><label for="activeColor">Active word color</label><input id="activeColor" data-key="activeColor" type="color"></div>
+      </div>
+      <div class="toggles">
+        <label><input type="checkbox" id="alwaysEmphasize" data-key="alwaysEmphasize"> Emphasis in every caption</label>
+        <label><input type="checkbox" id="stackEmphasis" data-key="stackEmphasis"> Emphasis on its own line</label>
+      </div>
+    </section>
+  </main>
+
+  <footer class="statusbar">
+    <div id="progress" class="progress" hidden>
+      <div class="bar"><div id="progressBar"></div></div>
+      <button id="cancelBtn" class="btn small">Cancel</button>
+    </div>
+    <div id="status" class="status" role="status"></div>
+  </footer>
+  <script src="../../dist/panel.js"></script>
+</body>
+</html>

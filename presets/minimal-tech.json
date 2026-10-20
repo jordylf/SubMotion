@@ -1,0 +1,24 @@
+{
+  "id": "minimal-tech",
+  "name": "Minimal Tech",
+  "font": "SegoeUI-Semibold",
+  "fallbackFonts": [
+    "Arial-BoldMT"
+  ],
+  "fontSize": 58,
+  "emphasisSizeMul": 1,
+  "tracking": 10,
+  "textColor": "#E8EEF5",
+  "keywordColor": "#4DA3FF",
+  "animation": "slide-up",
+  "emphasisAnimation": "slide-up",
+  "intensity": 25,
+  "reveal": "caption",
+  "caseMode": "as-is",
+  "punctuation": "minimal",
+  "maxWords": 6,
+  "minWords": 3,
+  "isolateKeywords": false,
+  "normalEffects": [],
+  "emphasisEffects": []
+}

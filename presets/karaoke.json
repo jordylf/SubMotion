@@ -1,0 +1,25 @@
+{
+  "id": "karaoke",
+  "name": "Karaoke",
+  "font": "Arial-BoldMT",
+  "fontSize": 74,
+  "textColor": "#FFFFFF",
+  "keywordColor": "#FFFFFF",
+  "activeColor": "#FFD400",
+  "activeWordHighlight": true,
+  "strokeWidth": 8,
+  "animation": "scale",
+  "emphasisAnimation": "scale",
+  "intensity": 40,
+  "reveal": "caption",
+  "caseMode": "upper",
+  "maxWords": 6,
+  "minWords": 3,
+  "isolateKeywords": false,
+  "normalEffects": [
+    "outline"
+  ],
+  "emphasisEffects": [
+    "outline"
+  ]
+}

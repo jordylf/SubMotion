@@ -1,0 +1,26 @@
+{
+  "id": "clean",
+  "name": "Clean",
+  "font": "Arial-BoldMT",
+  "fontSize": 64,
+  "emphasisSizeMul": 1,
+  "textColor": "#FFFFFF",
+  "keywordColor": "#FFFFFF",
+  "animation": "fade",
+  "emphasisAnimation": "fade",
+  "intensity": 30,
+  "reveal": "caption",
+  "caseMode": "sentence",
+  "punctuation": "keep",
+  "maxWords": 7,
+  "minWords": 3,
+  "maxChars": 42,
+  "isolateKeywords": false,
+  "dramaticPunctuation": false,
+  "normalEffects": [
+    "shadow"
+  ],
+  "emphasisEffects": [
+    "shadow"
+  ]
+}

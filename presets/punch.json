@@ -1,0 +1,31 @@
+{
+  "id": "punch",
+  "name": "Punch",
+  "font": "Impact",
+  "fallbackFonts": [
+    "Arial-Black",
+    "Arial-BoldMT"
+  ],
+  "fontSize": 96,
+  "emphasisSizeMul": 1.45,
+  "textColor": "#FFFFFF",
+  "keywordColor": "#FF3B30",
+  "strokeWidth": 12,
+  "animation": "punch",
+  "emphasisAnimation": "shake",
+  "intensity": 85,
+  "reveal": "word",
+  "caseMode": "upper",
+  "punctuation": "minimal",
+  "maxWords": 3,
+  "minWords": 1,
+  "maxLines": 2,
+  "isolateKeywords": true,
+  "dramaticPunctuation": true,
+  "normalEffects": [
+    "outline"
+  ],
+  "emphasisEffects": [
+    "outline"
+  ]
+}

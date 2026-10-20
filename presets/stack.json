@@ -1,0 +1,44 @@
+{
+  "id": "stack",
+  "name": "Stack",
+  "font": "Poppins-Bold",
+  "fallbackFonts": [
+    "Montserrat-Bold",
+    "Arial-BoldMT"
+  ],
+  "fontSize": 76,
+  "textColor": "#FFFFFF",
+  "animation": "snap",
+  "intensity": 50,
+  "emphasisFont": "Poppins-ExtraBold",
+  "emphasisSizeMul": 1.45,
+  "keywordColor": "#FF1F1F",
+  "emphasisAnimation": "snap",
+  "emphasisIntensity": 60,
+  "tracking": -20,
+  "lineSpacing": 0.8,
+  "wordSpacing": 0.22,
+  "caseMode": "lower",
+  "punctuation": "minimal",
+  "reveal": "word",
+  "velocity": 70,
+  "minWords": 3,
+  "maxWords": 6,
+  "maxChars": 34,
+  "maxLines": 3,
+  "maxWordsPerLine": 3,
+  "maxWidthPct": 70,
+  "position": "middle",
+  "alwaysEmphasize": true,
+  "emphasisScope": "phrase",
+  "stackEmphasis": true,
+  "maxKeywordsPerCaption": 2,
+  "isolateKeywords": true,
+  "dramaticPunctuation": true,
+  "normalEffects": [
+    "shadow"
+  ],
+  "emphasisEffects": [
+    "glow"
+  ]
+}

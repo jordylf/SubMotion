@@ -1,0 +1,31 @@
+{
+  "id": "cinematic",
+  "name": "Cinematic",
+  "font": "Georgia",
+  "fallbackFonts": [
+    "TimesNewRomanPSMT"
+  ],
+  "fontSize": 56,
+  "emphasisSizeMul": 1,
+  "tracking": 40,
+  "textColor": "#F2EDE4",
+  "keywordColor": "#F2EDE4",
+  "animation": "blur-reveal",
+  "emphasisAnimation": "blur-reveal",
+  "intensity": 25,
+  "reveal": "caption",
+  "caseMode": "as-is",
+  "punctuation": "keep",
+  "position": "lower",
+  "maxWords": 8,
+  "minWords": 3,
+  "maxChars": 48,
+  "isolateKeywords": false,
+  "dramaticPunctuation": false,
+  "normalEffects": [
+    "shadow"
+  ],
+  "emphasisEffects": [
+    "shadow"
+  ]
+}

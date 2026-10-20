@@ -1,0 +1,30 @@
+{
+  "id": "viral",
+  "name": "Viral",
+  "font": "Montserrat-ExtraBold",
+  "fallbackFonts": [
+    "Arial-Black",
+    "Arial-BoldMT"
+  ],
+  "fontSize": 84,
+  "emphasisSizeMul": 1.25,
+  "textColor": "#FFFFFF",
+  "keywordColor": "#FFE500",
+  "strokeWidth": 10,
+  "animation": "pop",
+  "emphasisAnimation": "punch",
+  "intensity": 60,
+  "reveal": "word",
+  "caseMode": "sentence",
+  "punctuation": "minimal",
+  "minWords": 3,
+  "maxWords": 5,
+  "isolateKeywords": true,
+  "dramaticPunctuation": true,
+  "normalEffects": [
+    "outline"
+  ],
+  "emphasisEffects": [
+    "outline"
+  ]
+}

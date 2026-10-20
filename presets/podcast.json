@@ -1,0 +1,24 @@
+{
+  "id": "podcast",
+  "name": "Podcast",
+  "font": "Arial-BoldMT",
+  "fontSize": 70,
+  "textColor": "#FFFFFF",
+  "keywordColor": "#7CF29A",
+  "activeColor": "#7CF29A",
+  "strokeWidth": 6,
+  "animation": "pop",
+  "emphasisAnimation": "pop",
+  "intensity": 30,
+  "reveal": "word",
+  "caseMode": "sentence",
+  "maxWords": 6,
+  "minWords": 3,
+  "isolateKeywords": false,
+  "normalEffects": [
+    "outline"
+  ],
+  "emphasisEffects": [
+    "outline"
+  ]
+}
