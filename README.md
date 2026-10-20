@@ -12,6 +12,15 @@ editable. Bahasa Indonesia and English are first-class languages.
 
 [**Download Windows beta →**](https://github.com/jordylf/SubMotion/releases/tag/v0.1.0) · [Installation](#install) · [Premiere workflow](#premiere-pro)
 
+## Timeline example
+
+[![SubMotion captions in Premiere Pro 2024: text in the Program Monitor and generated graphics on V2](docs/screenshots/premiere-timeline.png)](docs/screenshots/premiere-timeline.png)
+
+Actual screenshot from an earlier Premiere Pro 2024 integration test. The Program Monitor shows
+the caption output, with generated graphics on **V2** above the original video on **V1**.
+This is a still image; it illustrates timeline placement, not animation playback. Footage shown
+belongs to its respective owner and is not included with SubMotion. Click to view full size.
+
 ## Panel preview
 
 Load subtitles, choose a look, then generate editable captions in Adobe.
