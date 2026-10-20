@@ -14,12 +14,24 @@ editable. Bahasa Indonesia and English are first-class languages.
 
 ## Timeline example
 
-[![SubMotion captions in Premiere Pro 2024: text in the Program Monitor and generated graphics on V2](docs/screenshots/premiere-timeline.png)](docs/screenshots/premiere-timeline.png)
+Actual captures from **After Effects 2024** and **Premiere Pro 2024**, using the included
+[Indonesian sample](docs/samples/sample-id.srt) with the **Viral** preset and a demo background.
+Click either image to view full size.
 
-Actual screenshot from an earlier Premiere Pro 2024 integration test. The Program Monitor shows
-the caption output, with generated graphics on **V2** above the original video on **V1**.
-This is a still image; it illustrates timeline placement, not animation playback. Footage shown
-belongs to its respective owner and is not included with SubMotion. Click to view full size.
+**After Effects — generated caption segments on the timeline.** Open a caption precomp to edit
+its text layers. The viewer shows the emphasized value **5 JUTA?!**.
+
+[![SubMotion in After Effects 2024: emphasized caption and timed caption precomps](docs/screenshots/after-effects-timeline.jpg)](docs/screenshots/after-effects-timeline.jpg)
+
+**Premiere Pro — the same AE composition linked on V2**, above the demo background on V1.
+This demonstrates the **Dynamic Link** workflow: text and animation are edited in After Effects;
+Premiere controls placement and timing of the linked clip.
+
+[![SubMotion in Premiere Pro 2024: caption in the Program Monitor and linked AE composition on V2](docs/screenshots/premiere-dynamic-link.jpg)](docs/screenshots/premiere-dynamic-link.jpg)
+
+These still images demonstrate rendered output and timeline placement, not animation playback
+or the separate MOGRT workflow. Captions were created with SubMotion's AE host engine and the
+saved demo composition was imported into Premiere through its scripting API.
 
 ## Panel preview
 
